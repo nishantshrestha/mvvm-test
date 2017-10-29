@@ -10,28 +10,25 @@ import Foundation
 
 class CarViewModel {
     
-    private var car: Car?
+    private var car: Car
     
-    var makeText: String? {
-        return car?.make
+    var makeText: String {
+        return car.make
     }
-    var modelText: String? {
-        return car?.model
-    }
-    
-    var titleText: String? {
-        guard let make = car?.make, let model = car?.model else { return nil }
-        return "\(make) \(model)"
+    var modelText: String {
+        return car.model
     }
     
-    var horsepowerText: String? {
-        guard let horsepower = car?.horsepower else { return nil }
-        return "\(horsepower) HP"
+    var titleText: String {
+        return "\(car.make) \(car.model)"
+    }
+    
+    var horsepowerText: String {
+        return "\(car.horsepower) HP"
     }
  
     var photoURL: URL? {
-        guard let photoURL = car?.photoURL else { return nil }
-        return URL(string: photoURL)
+        return URL(string: car.photoURL)
     }
     
     init(car: Car) {

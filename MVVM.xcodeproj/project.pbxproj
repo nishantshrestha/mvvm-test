@@ -13,6 +13,8 @@
 		1970EC921FA597960018AA40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1970EC911FA597960018AA40 /* Assets.xcassets */; };
 		1970EC951FA597960018AA40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1970EC931FA597960018AA40 /* LaunchScreen.storyboard */; };
 		1970ECA01FA597960018AA40 /* MVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1970EC9F1FA597960018AA40 /* MVVMTests.swift */; };
+		1970ECAD1FA59C2F0018AA40 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1970ECAC1FA59C2F0018AA40 /* Car.swift */; };
+		1970ECAF1FA59D6F0018AA40 /* CarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1970ECAE1FA59D6F0018AA40 /* CarViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		1970EC9B1FA597960018AA40 /* MVVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1970EC9F1FA597960018AA40 /* MVVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMTests.swift; sourceTree = "<group>"; };
 		1970ECA11FA597960018AA40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1970ECAC1FA59C2F0018AA40 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		1970ECAE1FA59D6F0018AA40 /* CarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 		1970EC891FA597960018AA40 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				1970ECAB1FA59C240018AA40 /* ViewModel */,
+				1970ECAA1FA59C200018AA40 /* Model */,
 				1970EC8A1FA597960018AA40 /* AppDelegate.swift */,
 				1970EC8C1FA597960018AA40 /* ViewController.swift */,
 				1970EC8E1FA597960018AA40 /* Main.storyboard */,
@@ -94,6 +100,22 @@
 				1970ECA11FA597960018AA40 /* Info.plist */,
 			);
 			path = MVVMTests;
+			sourceTree = "<group>";
+		};
+		1970ECAA1FA59C200018AA40 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1970ECAC1FA59C2F0018AA40 /* Car.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1970ECAB1FA59C240018AA40 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1970ECAE1FA59D6F0018AA40 /* CarViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +223,8 @@
 			files = (
 				1970EC8D1FA597960018AA40 /* ViewController.swift in Sources */,
 				1970EC8B1FA597960018AA40 /* AppDelegate.swift in Sources */,
+				1970ECAD1FA59C2F0018AA40 /* Car.swift in Sources */,
+				1970ECAF1FA59D6F0018AA40 /* CarViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,12 +377,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6LLLFQ93JK;
 				INFOPLIST_FILE = MVVM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.nishantshrestha.MVVM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -368,12 +394,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6LLLFQ93JK;
 				INFOPLIST_FILE = MVVM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.nishantshrestha.MVVM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

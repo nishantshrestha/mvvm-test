@@ -7,31 +7,42 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class CarViewModel {
     
     private var car: Car
     
-    var makeText: String {
-        return car.make
-    }
-    var modelText: String {
-        return car.model
-    }
+    let disposeBag = DisposeBag()
     
-    var titleText: String {
-        return "\(car.make) \(car.model)"
-    }
+    var makeText: BehaviorSubject<String>
+    var modelText: BehaviorSubject<String>
+    var horsepowerText: BehaviorSubject<String>
+    var titleText: BehaviorSubject<String>
     
-    var horsepowerText: String {
-        return "\(car.horsepower) HP"
-    }
- 
     var photoURL: URL? {
         return URL(string: car.photoURL)
     }
     
     init(car: Car) {
         self.car = car
+        
+        makeText = BehaviorSubject<String>(value: car.make)
+        makeText.subscribe(onNext: { (make) in
+            car.make = make
+        }).disposed(by: disposeBag)
+        
+        modelText = BehaviorSubject<String>(value: car.model)
+        modelText.subscribe(onNext: { (model) in
+            car.model = model
+        }).disposed(by: disposeBag)
+        
+        titleText = BehaviorSubject<String>(value: "\(car.make) \(car.model)")
+        Observable.combineLatest([makeText, modelText]) { (carInfo) -> String in
+            return "\(carInfo[0]) \(carInfo[1])"
+        }.bind(to: titleText).disposed(by: disposeBag)
+        
+        horsepowerText = BehaviorSubject<String>(value: "\(car.horsepower) HP")
     }
 }

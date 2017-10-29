@@ -12,11 +12,27 @@ class CarViewModel {
     
     private var car: Car?
     
-    var makeText: String?
-    var modelText: String?
-    var titleText: String?
-    var horsepowerText: String?
-    var photoURL: URL?
+    var makeText: String? {
+        return car?.make
+    }
+    var modelText: String? {
+        return car?.model
+    }
+    
+    var titleText: String? {
+        guard let make = car?.make, let model = car?.model else { return nil }
+        return "\(make) \(model)"
+    }
+    
+    var horsepowerText: String? {
+        guard let horsepower = car?.horsepower else { return nil }
+        return "\(horsepower) HP"
+    }
+ 
+    var photoURL: URL? {
+        guard let photoURL = car?.photoURL else { return nil }
+        return URL(string: photoURL)
+    }
     
     init(car: Car) {
         self.car = car

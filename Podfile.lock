@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: 008f0cc732f2d364c8d63d4bf96cf13b8ded0160
+PODS:
+  - RxCocoa (2.6.1):
+    - RxSwift (~> 2.6)
+  - RxSwift (2.6.1)
+
+DEPENDENCIES:
+  - RxCocoa (~> 2.0)
+  - RxSwift (~> 2.0)
+
+SPEC CHECKSUMS:
+  RxCocoa: 3bb2820fd2a1ba48a70d38926bec0803838ae802
+  RxSwift: 0147fbf94e65c6085da9540de92848189ac1c3f6
+
+PODFILE CHECKSUM: 9f7060c3b44fc47cfb12cdbcbe3b43698fcdc1b8
 
 COCOAPODS: 1.1.1

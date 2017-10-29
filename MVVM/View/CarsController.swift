@@ -26,6 +26,15 @@ class CarsController: UIViewController {
         cars.asObservable().bind(to: tableView.rx.items(cellIdentifier: "carCell", cellType: CarTableViewCell.self)) { (index, carViewModel: CarViewModel, cell) in
             cell.carViewModel = carViewModel
         }.disposed(by: disposeBag)
+        
+        tableView.rx.itemSelected.subscribe(onNext: { (indexPath) in
+            self.tableView.deselectRow(at: indexPath, animated: true)
+            guard let detailsController = CarDetailsController.storyboardInstance() else { return }
+            detailsController.carViewModel = self.cars.value[indexPath.row]
+            self.navigationController?.pushViewController(detailsController, animated: true)
+        }).disposed(by: disposeBag)
+        
+        tableView.rx.itemSelected.su
     }
     
 }

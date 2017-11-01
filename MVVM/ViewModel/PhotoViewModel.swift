@@ -46,7 +46,7 @@ struct PhotoViewModel {
     }
     
     func uploadDateText() -> String {
-        let result = formatSecondsToDuration(seconds: secondsSinceTimestamp(timestamp: getUnixtimestampForUpload()))
+        let result = formatSecondsToDuration(seconds: secondsSinceTimestamp(timestamp: unixTimestampForUpload))
         return "\(result.value) \(result.unit)\(result.value > 1 ? "s" : "") ago".uppercased()
     }
     
@@ -58,7 +58,7 @@ struct PhotoViewModel {
         return formatter.string(from: NSNumber(value: photo.timesViewed)) ?? "0"
     }
     
-    private func getUnixtimestampForUpload() -> Int {
+    private var unixTimestampForUpload: Int {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssxxxxx"
         let date = formatter.date(from: photo.createdAt)
@@ -70,7 +70,7 @@ struct PhotoViewModel {
         let currentDate = Date()
         let currentTimestamp = Int(currentDate.timeIntervalSince1970)
         
-        let seconds = currentTimestamp - getUnixtimestampForUpload()
+        let seconds = currentTimestamp - timestamp
         
         return seconds
     }

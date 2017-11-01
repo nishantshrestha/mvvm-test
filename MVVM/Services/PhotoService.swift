@@ -14,7 +14,7 @@ import SwiftyJSON
 struct PhotoService {
 
     func getPhotos(completionHandler: @escaping (Result<[Photo]>) -> ()) {
-        let url = "https://api.500px.com/v1/photos?consumer_key=\(Constants.consumerKey)&feature=popular&image_size=600"
+        let url = "https://api.500px.com/v1/photos?consumer_key=\(Constants.consumerKey)&feature=popular&image_size=600&rpp=50"
         
         Alamofire.request(url)
             .validate()

@@ -12,7 +12,19 @@ target 'MVVM' do
 
   # Pods for MVVM
   rx_swift
-
+  
+  # Networking
+  pod 'Alamofire', '~> 4.5'
+  pod 'RxAlamofire'
+  pod 'AlamofireObjectMapper', '~> 5.0'
+  
+  # Utilities
+  pod 'SwiftyJSON'
+  pod 'Kingfisher'
+  
+  # UI
+  pod 'SVProgressHUD'
+  
   target 'MVVMTests' do
     inherit! :search_paths
     # Pods for testing

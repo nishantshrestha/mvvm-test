@@ -183,6 +183,7 @@
 		1970ECB01FA5A0B70018AA40 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				19C30BDD1FAC2EE5000DF668 /* Views */,
 				1970ECB51FA601B90018AA40 /* Cells */,
 				19FCAEAC1FA82E20006CF16B /* LoginController.storyboard */,
 				19FCAEAE1FA82E43006CF16B /* LoginController.swift */,
@@ -200,6 +201,13 @@
 				1962C41E1FA96E60001A1024 /* PhotoCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		19C30BDD1FAC2EE5000DF668 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		19D430E81FA9761B00D09F4A /* Extensions */ = {

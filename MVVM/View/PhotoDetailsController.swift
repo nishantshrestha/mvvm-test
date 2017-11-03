@@ -13,8 +13,17 @@ import Kingfisher
 
 class PhotoDetailsController: UIViewController {
     
+    // Header
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+    @IBOutlet weak var userAvatarImageView: UIImageView!
+    
+    // Image
     @IBOutlet var photoImageView: UIImageView!
     
+    // Footer
+    
+    // Comments
     @IBOutlet var tableView: UITableView!
     
     var photoViewModel: Variable<PhotoViewModel>?
@@ -29,13 +38,20 @@ class PhotoDetailsController: UIViewController {
         tableView.estimatedRowHeight = 50.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        // Circular image
+        userAvatarImageView.layer.cornerRadius = 20.0
+        
         bindUI()
     }
     
     private func bindUI() {
         guard let photoViewModel = photoViewModel, let commentViewModels = commentViewModels else { return }
         
+        navigationItem.title = photoViewModel.value.titleText
         photoImageView.kf.setImage(with: photoViewModel.value.photoURL)
+        
+        usernameLabel.text = photoViewModel.value.getUserName()
+        userAvatarImageView.kf.setImage(with: photoViewModel.value.getUserAvatarURL())
         
         bindTableView(withViewModels: commentViewModels)
     }

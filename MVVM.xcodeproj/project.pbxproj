@@ -20,6 +20,9 @@
 		1970EC921FA597960018AA40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1970EC911FA597960018AA40 /* Assets.xcassets */; };
 		1970EC951FA597960018AA40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1970EC931FA597960018AA40 /* LaunchScreen.storyboard */; };
 		1970ECA01FA597960018AA40 /* MVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1970EC9F1FA597960018AA40 /* MVVMTests.swift */; };
+		19C30BD81FAC2330000DF668 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C30BD71FAC2330000DF668 /* CommentViewModel.swift */; };
+		19C30BDA1FAC2390000DF668 /* PhotoDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C30BD91FAC2390000DF668 /* PhotoDetailsController.swift */; };
+		19C30BDC1FAC2540000DF668 /* PhotoDetailsController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C30BDB1FAC2540000DF668 /* PhotoDetailsController.storyboard */; };
 		19CA4E6D1FA98CB40012FF25 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA4E6C1FA98CB40012FF25 /* UserViewModel.swift */; };
 		19D430EA1FA9762B00D09F4A /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D430E91FA9762B00D09F4A /* UITextField.swift */; };
 		19D430EC1FA97B3E00D09F4A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D430EB1FA97B3E00D09F4A /* AuthService.swift */; };
@@ -60,6 +63,9 @@
 		1970EC9B1FA597960018AA40 /* MVVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1970EC9F1FA597960018AA40 /* MVVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMTests.swift; sourceTree = "<group>"; };
 		1970ECA11FA597960018AA40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19C30BD71FAC2330000DF668 /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
+		19C30BD91FAC2390000DF668 /* PhotoDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsController.swift; sourceTree = "<group>"; };
+		19C30BDB1FAC2540000DF668 /* PhotoDetailsController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoDetailsController.storyboard; sourceTree = "<group>"; };
 		19CA4E6C1FA98CB40012FF25 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		19D430E91FA9762B00D09F4A /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		19D430EB1FA97B3E00D09F4A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 				19FCAEB01FA830BF006CF16B /* LoginViewModel.swift */,
 				1962C41A1FA96A6E001A1024 /* PhotoViewModel.swift */,
 				19CA4E6C1FA98CB40012FF25 /* UserViewModel.swift */,
+				19C30BD71FAC2330000DF668 /* CommentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -181,6 +188,8 @@
 				19FCAEAE1FA82E43006CF16B /* LoginController.swift */,
 				1962C41C1FA96D2E001A1024 /* PhotoExplorerController.storyboard */,
 				1962C4221FA96ECA001A1024 /* PhotoExplorerController.swift */,
+				19C30BDB1FAC2540000DF668 /* PhotoDetailsController.storyboard */,
+				19C30BD91FAC2390000DF668 /* PhotoDetailsController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -312,6 +321,7 @@
 			files = (
 				1970EC951FA597960018AA40 /* LaunchScreen.storyboard in Resources */,
 				19FCAEAD1FA82E20006CF16B /* LoginController.storyboard in Resources */,
+				19C30BDC1FAC2540000DF668 /* PhotoDetailsController.storyboard in Resources */,
 				1962C41D1FA96D2E001A1024 /* PhotoExplorerController.storyboard in Resources */,
 				1970EC921FA597960018AA40 /* Assets.xcassets in Resources */,
 			);
@@ -425,7 +435,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1962C4191FA9648E001A1024 /* Photographer.swift in Sources */,
+				19C30BD81FAC2330000DF668 /* CommentViewModel.swift in Sources */,
 				1970EC8B1FA597960018AA40 /* AppDelegate.swift in Sources */,
+				19C30BDA1FAC2390000DF668 /* PhotoDetailsController.swift in Sources */,
 				1962C4121FA962E2001A1024 /* Constants.swift in Sources */,
 				1962C41F1FA96E60001A1024 /* PhotoCell.swift in Sources */,
 				1962C41B1FA96A6E001A1024 /* PhotoViewModel.swift in Sources */,

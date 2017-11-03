@@ -55,7 +55,11 @@ class PhotoExplorerController: UIViewController {
                 
                 switch result {
                 case .success(let comments):
-                    comments.map { print($0.body!) }
+                    let commentsViewModel = comments.map(CommentViewModel.init)
+                    guard let detailController = PhotoDetailsController.storyboardInstance() else { return }
+                    detailController.photoViewModel = Variable<PhotoViewModel>(photoViewModel)
+                    detailController.commentViewModels = Variable<[CommentViewModel]>(commentsViewModel)
+                    self?.navigationController?.pushViewController(detailController, animated: true)
                 case .error(let message):
                     print("error: ", message)
                 }

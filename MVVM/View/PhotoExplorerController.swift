@@ -17,6 +17,8 @@ class PhotoExplorerController: UIViewController {
     
     let disposeBag = DisposeBag()
     
+    var processingNetworkRequest: Bool = false
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -45,11 +47,18 @@ class PhotoExplorerController: UIViewController {
         tableView.rx.itemSelected.subscribe(onNext: { [weak self] (indexPath) in
             self?.tableView.deselectRow(at: indexPath, animated: true)
             
+            // Do not let consecutive taps trigger the push navigation
+            guard let processingNetworkRequest = self?.processingNetworkRequest, processingNetworkRequest == false else { return }
+            
             // do something? - open big preview?
             SVProgressHUD.show(withStatus: "Retrieving photo details...")
             
+            self?.processingNetworkRequest = true
+            
             guard let photoViewModel = self?.photoViewModels?.value[indexPath.row] else { return }
             PhotoService().getCommentsForPhotoID(id: photoViewModel.getPhotoID(), completionHandler: { (result) in
+                
+                self?.processingNetworkRequest = false
                 
                 SVProgressHUD.dismiss()
                 
